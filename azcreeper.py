@@ -12,7 +12,7 @@ if __name__ == "__main__":
     email = user
     if "@" not in email:
       email += "@" + domain
-      r = requests.post("https://login.microsoftonline.com/common/GetCredentialType", json={"Username":email})
-      r = json.loads(r.text)
-      if r["IfExistsResult"] == True or r["Credentials"]["CertAuthParams"] != None:
-        print(f"{email} exists")
+    r = requests.post("https://login.microsoftonline.com/common/GetCredentialType", json={"Username":email})
+    r = json.loads(r.text)
+    if r["IfExistsResult"] == True or r["Credentials"]["CertAuthParams"] != None:
+      print(f"{email} exists")
