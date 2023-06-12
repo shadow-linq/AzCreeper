@@ -5,6 +5,7 @@ import sys
 if __name__ == "__main__":
   if len(sys.argv) < 3:
     print("azcreeper.py <DOMAIN> <USERLIST>")
+    exit(-1)
   domain = sys.argv[1]
   f = open(sys.argv[2], "r")
   users = f.read().split('\n')
